@@ -1,0 +1,58 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Program: Load SUV data
+Version: 20201121
+@author: Pranab Das (Twitter: @pranab_das)
+data = suv.load("data.txt", 12)
+"""
+
+def load(filename, scan=-1):
+    import numpy as np
+    import pandas as pd
+
+    fid = open(filename, 'r')
+    contents = fid.read()
+    fid.close()
+    contents = contents.splitlines()
+    
+    # find scan id and corresponding line numbers 
+    scan_id = []
+    line_id = []
+    
+    for line in range(len(contents)):
+        line_content = contents[line].split(' ')
+        if line_content[0]=='#S':
+            scan_id.append(int(line_content[1]))
+            line_id.append(line)
+
+    # Determine the lines to read for specific scan
+    # Default scan set to the last scan 
+    if scan==-1:
+        scan = scan_id[-1]
+
+    # In case given scan does not exist in the file 
+    if scan not in scan_id:
+        print("Error! Scan not found!")
+        return
+    else: 
+        line_start = line_id[scan-1]
+        if scan==scan_id[-1]:
+            line_end = len(contents)
+        else:
+            line_end = line_id[scan] - 1
+            
+    # Extract the column names
+    for line in range(line_end-line_start):
+        line_content = contents[line+line_start].split(' ')
+        if line_content[0]=='#L':
+            colnames=line_content
+            colnames.pop(0)
+            colnames = list(filter(None, colnames))
+
+    # print("Scan #", scan, "loaded. Data columns are: \n", colnames)
+
+    data = np.loadtxt(filename, comments='#', skiprows=line_start-1, \
+                      max_rows=(line_end-line_start))
+    
+    return pd.DataFrame(data, columns=colnames)
