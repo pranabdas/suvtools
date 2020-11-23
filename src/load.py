@@ -9,7 +9,6 @@ data = suv.load("data.txt", 12)
 
 def load(filename, scan=-1):
     import numpy as np
-    import pandas as pd
 
     fid = open(filename, 'r')
     contents = fid.read()
@@ -50,9 +49,7 @@ def load(filename, scan=-1):
             colnames.pop(0)
             colnames = list(filter(None, colnames))
 
-    # print("Scan #", scan, "loaded. Data columns are: \n", colnames)
+    print("Scan #", scan, "loaded. Data columns are: \n", colnames)
 
-    data = np.loadtxt(filename, comments='#', skiprows=line_start-1, \
+    return np.loadtxt(filename, comments='#', skiprows=line_start-1, \
                       max_rows=(line_end-line_start))
-    
-    return pd.DataFrame(data, columns=colnames)
