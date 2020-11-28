@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Program: Fit peaks with Gaussian distribution
+Program: Fit peaks with Lorentzian distribution
 Version: 20201123
 @author: Pranab Das (Twitter: @pranab_das)
 data = suv.fit_lorentz(x, y, a='', x0='', gamma='', xmin='', xmax='')
