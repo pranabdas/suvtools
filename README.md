@@ -30,4 +30,9 @@ returns x, Lorentzian fitted y values, and prints out relevant parameters. `xmin
 
 - `suv.save_csv("datafile.txt", csvname='', scan=-1)`: saves scan to a csv file. The file will be saved in the save directory as `datafile` with name `datafile.csv` unless  `csvname` is specified. Like the `load` module, if the scan number is not specified, it will read the last scan from the file. 
 
+- `suv.norm_bg(energy, intensity, x1, x2, x_norm_loc=-1)`:
+Removes linear background, and normalizes the data. x1, x2 are energy points
+that determines the slope of the background. By default the normalization done
+at the tail point of the spectra. It can be changed to any other point. 
+
 Please see the notebook for example usage. 

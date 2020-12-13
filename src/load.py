@@ -49,7 +49,7 @@ def load(filename, scan=-1):
             colnames.pop(0)
             colnames = list(filter(None, colnames))
 
-    print("Scan #", scan, "loaded. Data columns are: \n", colnames)
+    # print("Scan #", scan, "loaded. Data columns are: \n", colnames)
 
     return np.loadtxt(filename, comments='#', skiprows=line_start-1, \
                       max_rows=(line_end-line_start))

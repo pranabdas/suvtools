@@ -14,8 +14,14 @@ Returns x, Lorentzian fitted y values, and prints out relevant parameters.
 
 suv.save_csv("datafile.txt", csvname='', scan=-1): 
 Saves scan to a csv file.
+
+suv.norm_bg(energy, intensity, x1, x2, x_norm_loc=-1):
+Removes linear background, and normalizes the data. x1, x2 are energy points
+that determines the slope of the background. By default the normalization done
+at the tail point of the spectra. It can be changed to any other point. 
 """
 from suvtools.src.load import load
 from suvtools.src.fit_gauss import fit_gauss
 from suvtools.src.fit_lorentz import fit_lorentz
 from suvtools.src.save_csv import save_csv
+from suvtools.src.norm_bg import norm_bg
