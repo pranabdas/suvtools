@@ -13,6 +13,9 @@ def norm_bg(energy, intensity, x1, x2, x_norm_loc=-1):
     y1 = intensity[np.where(energy==x1)[0][0]]
     y2 = intensity[np.where(energy==x2)[0][0]]
 
+    if x_norm_loc!=-1:
+        x_norm_loc=np.where(energy==x_norm_loc)[0][0]
+
     m = (y2 - y1)/(x2 - x1)    # slope
     c = y1 - m*x1              # intersection 
 
