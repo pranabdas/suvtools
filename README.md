@@ -10,7 +10,9 @@ Install required python packages:
 pip3 install --upgrade -r requirements.txt
 ```
 
-Import SUVTools in your project:
+Import SUVTools in your project (unless the library folder is in your working
+directory or any of the python lookup paths, you need to add the parent folder 
+path):
 ```py
 import sys
 sys.path.append("/parent/suvtools/folder/")
@@ -36,4 +38,10 @@ that determines the slope of the background. By default the normalization done
 at the tail point of the spectra. It can be changed to other point, enter the
 corresponding energy value. 
 
-Please see the notebook for example usage. 
+- `suv.lock_peak(data, refdata, x1='', x2='', E_col=0, I_col=9, I0_col=4)`:  
+Locks peak position with respect to the reference data. It locks the maximum of
+intensity to the same energy; the range of peak search can be specified by input
+`x1` and `x2`. If no bounds are given, it will find the maximum in the whole 
+data range. 
+
+See the notebook for some example usage. 
