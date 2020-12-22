@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Program: Load SUV data
+Program: Subtracts linear background and normalizes the data
 Version: 20201211
 @author: Pranab Das (Twitter: @pranab_das)
 normalized_intensity = suv.norm_bg(energy, intensity, x1, x2, x_norm_loc=-1)

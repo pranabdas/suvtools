@@ -44,4 +44,9 @@ intensity to the same energy; the range of peak search can be specified by input
 `x1` and `x2`. If no bounds are given, it will find the maximum in the whole 
 data range. 
 
+- `suv.calc_area(y, x, x_start='', x_end='')`:  
+Calculates area under the curve for given `x` and `y` values. `x_start` and 
+`x_end` can be specified to set the limit of integration region, if not provided
+whole range is integrated. 
+
 See the notebook for some example usage. 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Program: Load SUV data
+Program: Lock the peaks at same energy location
 Version: 20201215
 @author: Pranab Das (Twitter: @pranab_das)
 data = suv.lock_peak(data, refdata, x1='', x2='', E_col=0, I_col=9, I0_col=4)

@@ -25,6 +25,12 @@ Locks peak position with respect to the reference data. It locks the maximum of
 intensity to the same energy; the range of peak search can be specified by input
 `x1` and `x2`. If no bounds are given, it will find the maximum in the whole 
 data range. 
+
+area = suv.calc_area(y, x, x_start='', x_end=''):
+Calculates area under the curve for given x and y values. x_start and x_end can
+be specified to set the limit of integration region, if not provided whole range
+is integrated. 
+
 """
 from suvtools.src.load import load
 from suvtools.src.fit_gauss import fit_gauss
@@ -32,3 +38,4 @@ from suvtools.src.fit_lorentz import fit_lorentz
 from suvtools.src.save_csv import save_csv
 from suvtools.src.norm_bg import norm_bg
 from suvtools.src.lock_peak import lock_peak
+from suvtools.src.calc_area import calc_area
