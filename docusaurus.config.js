@@ -9,6 +9,9 @@ module.exports = {
   organizationName: 'pranabdas',
   projectName: 'suvtools',
   themeConfig: {
+    prism: {
+      theme: require('prism-react-renderer/themes/dracula'),
+    },
     navbar: {
       title: 'SUV Tools',
       logo: {

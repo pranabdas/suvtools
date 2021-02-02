@@ -6,7 +6,7 @@ slug: /
 ---
 ### Getting the code
 If you are using git, you can clone the project by:
-```git
+```bash
 git clone https://github.com/pranabdas/suvtools.git
 ```
 
@@ -15,24 +15,24 @@ https://github.com/pranabdas/suvtools/releases).
 ### Requirements
 
 You will need Python 3 and following python packages installed: 
-```py
+```bash
 pip3 install numpy matplotlib scipy pandas
 ```
 
 Alternatively, you can install the packages using `requirements.txt`:
-```py
+```bash
 pip3 install --upgrade -r requirements.txt
 ```
 
 ### Importing suvtools modules into your program:
 If the `suvtools` directory is inside your project directory, you can import using:
-```py
+```python
 import suvtools as suv
 ```
 Later we can refer to the modules as `suv.` (e.g., `suv.load`). 
 
 If the `suvtools` directory is placed outside project directory, we can import using: 
-```py
+```python
 import sys
 sys.path.append("/parent/suvtools/path/")
 import suvtools as suv
@@ -41,7 +41,7 @@ import suvtools as suv
 ### Run suvtools along with Jupyter notebook in Docker:
 
 Here is a sample dockerfile. You can adjust according to your needs: 
-```docker
+```bash
 # Start from Ubuntu 20.04 LTS
 FROM ubuntu:focal
 
@@ -63,16 +63,16 @@ WORKDIR /home
 ```
 
 Build the Docker image:
-```docker
+```bash
 docker build -t suvtools .
 ```
 
 Run Docker:
-```docker
+```bash
 docker run -ti -p 8888:8888 -v ${pwd}:/home suvtools bash
 ```
 
 Launch jupyter notebook:
-```py
+```bash
 jupyter-notebook
 ```
