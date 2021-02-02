@@ -1,0 +1,78 @@
+---
+id: gs
+title: Getting started
+sidebar_label: Getting started
+slug: /
+---
+### Getting the code
+If you are using git, you can clone the project by:
+```git
+git clone https://github.com/pranabdas/suvtools.git
+```
+
+You can also download the ZIP archive of the package [here](
+https://github.com/pranabdas/suvtools/releases).
+### Requirements
+
+You will need Python 3 and following python packages installed: 
+```py
+pip3 install numpy matplotlib scipy pandas
+```
+
+Alternatively, you can install the packages using `requirements.txt`:
+```py
+pip3 install --upgrade -r requirements.txt
+```
+
+### Importing suvtools modules into your program:
+If the `suvtools` directory is inside your project directory, you can import using:
+```py
+import suvtools as suv
+```
+Later we can refer to the modules as `suv.` (e.g., `suv.load`). 
+
+If the `suvtools` directory is placed outside project directory, we can import using: 
+```py
+import sys
+sys.path.append("/parent/suvtools/path/")
+import suvtools as suv
+```
+
+### Run suvtools along with Jupyter notebook in Docker:
+
+Here is a sample dockerfile. You can adjust according to your needs: 
+```docker
+# Start from Ubuntu 20.04 LTS
+FROM ubuntu:focal
+
+# Update OS
+RUN apt update && apt upgrade -y
+
+# Install software packages 
+RUN apt install -y python3 python3-pip
+
+# Install pip packages 
+RUN pip3 install jupyterlab numpy scipy matplotlib
+
+# bashrc settings
+RUN echo 'alias jupyter-notebook=\
+"jupyter-notebook --allow-root --no-browser --ip 0.0.0.0"' >> $HOME/.bashrc
+
+# leave in `/home` which we can map with the host
+WORKDIR /home
+```
+
+Build the Docker image:
+```docker
+docker build -t suvtools .
+```
+
+Run Docker:
+```docker
+docker run -ti -p 8888:8888 -v ${pwd}:/home suvtools bash
+```
+
+Launch jupyter notebook:
+```py
+jupyter-notebook
+```
