@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Program: Load SUV data
-Version: 20201121
+Version: 20210202
 @author: Pranab Das (Twitter: @pranab_das)
 data = suv.load("data.txt", 12)
 """
@@ -24,7 +24,8 @@ def load(filename, scan=-1):
         if line_content[0]=='#S':
             scan_id.append(int(line_content[1]))
             line_id.append(line)
-
+    
+    scan_id = np.array(scan_id)
     # Determine the lines to read for specific scan
     # Default scan set to the last scan 
     if scan==-1:
@@ -35,11 +36,12 @@ def load(filename, scan=-1):
         print("Error! Scan not found!")
         return
     else: 
-        line_start = line_id[scan-1]
+        line_start = line_id[np.where(scan_id==scan)[0][0]]
+
         if scan==scan_id[-1]:
             line_end = len(contents)
         else:
-            line_end = line_id[scan] - 1
+            line_end = line_id[np.where(scan_id==scan)[0][0] +1] - 1
             
     # Extract the column names
     for line in range(line_end-line_start):
