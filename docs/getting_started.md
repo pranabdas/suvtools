@@ -69,7 +69,7 @@ docker build -t suvtools .
 
 Run Docker:
 ```bash
-docker run -ti -p 8888:8888 -v ${pwd}:/home suvtools bash
+docker run -ti -p 8888:8888 -v ${PWD}:/home suvtools bash
 ```
 
 Launch jupyter notebook:

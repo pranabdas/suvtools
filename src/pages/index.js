@@ -22,17 +22,21 @@ const features = [
     // imageUrl: 'img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        All the modules are available under MIT License and free of charge. 
+        All the modules are available under MIT License and free of charge to 
+        use, modify, and extend. Visit the <a href=
+        "https://github.com/pranabdas/suvtools/">Github repository</a>.
       </>
     ),
   },
   {
-    title: 'Download',
+    title: 'Download or use Web App',
     // imageUrl: 'img/undraw_docusaurus_react.svg',
     description: (
       <>
         Download the ZIP archive of the package &nbsp;
-        <a href="https://github.com/pranabdas/suvtools/releases">here</a>.
+        <a href="https://github.com/pranabdas/suvtools/releases">here</a>. If 
+        you only need to export data to CSV format for another application, you 
+        may use &nbsp;<a href="https://suv.netlify.app">this webapp</a> instead. 
       </>
     ),
   },
