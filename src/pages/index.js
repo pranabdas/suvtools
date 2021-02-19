@@ -35,8 +35,9 @@ const features = [
       <>
         Download the ZIP archive of the package &nbsp;
         <a href="https://github.com/pranabdas/suvtools/releases">here</a>. If 
-        you only need to export data to CSV format for another application, you 
-        may use &nbsp;<a href="https://suv.netlify.app">this webapp</a> instead. 
+        you only need to export data to CSV or plaintext format for another 
+        application, you may use &nbsp;<a href="https://suv.netlify.app">this 
+        webapp</a> instead. 
       </>
     ),
   },
