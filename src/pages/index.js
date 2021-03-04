@@ -13,7 +13,7 @@ const features = [
     description: (
       <>
         These modules are written in Python 3. The syntax and code structure is
-        easy to use and extend. 
+        easy to use and extend.
       </>
     ),
   },
@@ -22,7 +22,7 @@ const features = [
     // imageUrl: 'img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        All the modules are available under MIT License and free of charge to 
+        All the modules are available under MIT License and free of charge to
         use, modify, and extend. Visit the <a href=
         "https://github.com/pranabdas/suvtools/">Github repository</a>.
       </>
@@ -34,10 +34,10 @@ const features = [
     description: (
       <>
         Download the ZIP archive of the package &nbsp;
-        <a href="https://github.com/pranabdas/suvtools/releases">here</a>. If 
-        you only need to export data to CSV or plaintext format for another 
-        application, you may use &nbsp;<a href="https://suv.netlify.app">this 
-        webapp</a> instead. 
+        <a href="https://github.com/pranabdas/suvtools/releases">here</a>. If
+        you only need to export data to CSV or plaintext format for another
+        application, you may use &nbsp;<a href="https://suv.netlify.app">this
+        webapp</a> instead.
       </>
     ),
   },
@@ -63,7 +63,7 @@ function Home() {
   const {siteConfig = {}} = context;
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
+      title={`${siteConfig.title}`}
       description="Python libraries to analyze and visualize SSLS SUV beamline data<head />">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">

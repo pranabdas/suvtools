@@ -123,3 +123,37 @@ We can save the full scan in a **.csv** file as well.
 ```python
 suv.save_csv("sample_data.txt", "data.csv", 12)
 ```
+
+### Curve smoothing
+
+If the data is noisy, we can apply filters to smoothen it. Here is an example of
+applying Gaussian filter:
+
+```python
+# import neccesary packages
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.ndimage.filters import gaussian_filter1d
+
+%matplotlib inline
+plt.rcParams["figure.dpi"]=150
+plt.rcParams['figure.facecolor'] = 'white'
+
+# load your data
+data = np.loadtxt("data.txt")
+x, y = data[:, 0], (data[:, 1] - min(data[:, 1]))/(max(data[:, 1]) - min(data[:, 1]))
+
+# appy Gaussian filter to y
+y_smth = gaussian_filter1d(y, sigma=2.5)
+
+# make plots
+plt.plot(x, y, lw=1, label="original data")
+plt.plot(x, y_smth, lw=1, label="gauss filtered")
+plt.legend(frameon=False)
+plt.xlabel("x")
+plt.ylabel("y")
+plt.xlim(840, 880)
+plt.show()
+```
+
+![Curve Smoothing](../static/img/curve-smoothing.png)
