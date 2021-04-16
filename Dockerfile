@@ -1,7 +1,7 @@
 # Build command  : docker build -t suvtools .
 # Run docker     : docker run -ti -p 8888:8888 -v ${PWD}:/home suvtools bash
 # Launch jupyter : jupyter-notebook
-#                : jupyter-notebook --ip 0.0.0.0 
+#                : jupyter-notebook --ip 0.0.0.0
 #                : jupyter-notebook --ip 0.0.0.0 --port 9999
 
 # Start from Ubuntu 20.04 LTS
@@ -10,15 +10,18 @@ FROM ubuntu:focal
 # Update OS
 RUN apt update && apt upgrade -y
 
-# Install software packages 
+# Install software packages
 RUN apt install -y python3 python3-pip fonts-open-sans
 
-# Install pip packages 
+# Install pip packages
 RUN pip3 install jupyterlab numpy scipy matplotlib
 
-# bashrc settings
-RUN echo 'alias jupyter-notebook=\
-"jupyter-notebook --allow-root --no-browser --ip 0.0.0.0"' >> $HOME/.bashrc
+# jupyterlab settings
+RUN mkdir /etc/jupyter && \
+    (echo "c.ServerApp.ip = '0.0.0.0'" && \
+    echo "c.ServerApp.allow_root = True" && \
+    echo "c.ServerApp.open_browser = False") \
+        >> /etc/jupyter/jupyter_server_config.py
 
 # matplotlib customizations
 RUN mkdir -p /root/.config/matplotlib \

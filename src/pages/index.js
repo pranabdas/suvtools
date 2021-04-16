@@ -33,10 +33,10 @@ const features = [
     // imageUrl: 'img/undraw_docusaurus_react.svg',
     description: (
       <>
-        Download the ZIP archive of the package &nbsp;
+        Download the ZIP archive of the package{" "}
         <a href="https://github.com/pranabdas/suvtools/releases">here</a>. If
         you only need to export data to CSV or plaintext format for another
-        application, you may use &nbsp;<a href="https://suv.netlify.app">this
+        application, you may use {" "}<a href="https://suv.netlify.app">this
         webapp</a> instead.
       </>
     ),
