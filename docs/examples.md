@@ -2,7 +2,7 @@
 id: examples
 title: Examples
 ---
-### Import suvtools 
+## Import suvtools
 ```python
 # If suvtools is not in your working directory uncomment following two lines
 # import sys
@@ -10,12 +10,12 @@ title: Examples
 import suvtools as suv
 ```
 
-### Load data
+## Load data
 ```python
 data = suv.load("suvtools/dataset/sample_data.txt", 12)
 ```
 
-Let us print the first 2 rows: 
+Let us print the first 2 rows:
 ```python
 print(data[:2, :])
 ```
@@ -29,7 +29,13 @@ Output:
    0.00000e+00]]
 ```
 
-### Plot 
+:::tip
+
+It is also possible to load data from URL address as well.
+
+:::
+
+## Plot
 ```python
 x = data[:, 0]
 y = data[:, 6]
@@ -38,31 +44,31 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 
 plt.semilogy(x, y, linewidth=0.5)
-plt.xlabel("$2\\theta (deg)$") 
+plt.xlabel("$2\\theta (deg)$")
 plt.ylabel("Intensity (a.u.)")
 plt.xlim(10, 130)
 plt.show()
 ```
 ![Plot 1](../static/img/output-01.png)
 
-### Fit Gaussian
+## Fit Gaussian
 ```python
 x_fit, y_fit = suv.fit_gauss(x, y, xmin=93, xmax=95)
 ```
 
 Output:
 ```
-a = 725203.2202698857 
-x0 = 94.30231720686922 
-sigma = 0.07756533815550148 
+a = 725203.2202698857
+x0 = 94.30231720686922
+sigma = 0.07756533815550148
 FWHM = 0.182666371356206
 ```
 
-Let us plot the results: 
+Let us plot the results:
 ```python
 plt.plot(x, y/max(y), 'o', markersize=2, label='Data')
 plt.plot(x_fit, y_fit/max(y_fit), label='Gaussian fit')
-plt.xlabel("$2\\theta (deg)$") 
+plt.xlabel("$2\\theta (deg)$")
 plt.ylabel("Intensity (a.u.)")
 plt.xlim(93.5, 95)
 plt.legend()
@@ -71,10 +77,10 @@ plt.show()
 
 ![Plot 2](../static/img/output-02.png)
 
-### Locking peak position 
-Let us work with a XAS dataset. Here we want to lock the peak of second spectra 
-at same energy as first spectra. We are interested only in the first peak, 
-therefore limit the peak search to [525, 535]. 
+## Locking peak position
+Let us work with a XAS dataset. Here we want to lock the peak of second spectra
+at same energy as first spectra. We are interested only in the first peak,
+therefore limit the peak search to [525, 535].
 
 ```python
 s1 = suv.load("../dataset/sample_XAS.txt", 1)
@@ -83,11 +89,11 @@ s2 = suv.load("../dataset/sample_XAS.txt", 2)
 s2 = suv.lock_peak(s2, s1, 525, 535)
 ```
 
-### Background removal and normalization
+## Background removal and normalization
 
-The program removes linear background based on data values at energy point 520 
+The program removes linear background based on data values at energy point 520
 eV and 528 eV (it finds two data point and calculates slope and intersection).
-Then normalize the intensity corresponding to energy value 545 eV. 
+Then normalize the intensity corresponding to energy value 545 eV.
 
 ```python
 i1 = suv.norm_bg(s1[:, 0], s1[:, 9]/s1[:, 4], 520, 528, 545)
@@ -107,9 +113,9 @@ plt.show()
 
 ![Plot 3](../static/img/output-03.png)
 
-### Save plaintext 
+## Save plaintext
 
-Say you want to save the energy and normalized intensity in plaintext to work 
+Say you want to save the energy and normalized intensity in plaintext to work
 in another plotting software.
 ```python
 import numpy as np
@@ -118,13 +124,13 @@ data = np.array([s1[:, 0], i1]).T
 np.savetxt("data.txt", data)
 ```
 
-### Save CSV
-We can save the full scan in a **.csv** file as well. 
+## Save CSV
+We can save the full scan in a **.csv** file as well.
 ```python
 suv.save_csv("sample_data.txt", "data.csv", 12)
 ```
 
-### Curve smoothing
+## Curve smoothing
 
 If the data is noisy, we can apply filters to smoothen it. Here is an example of
 applying Gaussian filter:

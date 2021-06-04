@@ -16,7 +16,7 @@ def calc_area(y, x, x_start='', x_end=''):
         start_index = 0
 
     if x_end:
-        start_index = np.where(abs(x-x_end)==min(abs(x-x_end)))[0][0]
+        end_index = np.where(abs(x-x_end)==min(abs(x-x_end)))[0][0]
     else:
         end_index = -1
 

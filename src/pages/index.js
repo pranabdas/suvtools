@@ -63,7 +63,7 @@ function Home() {
   const {siteConfig = {}} = context;
   return (
     <Layout
-      title={`${siteConfig.title}`}
+      title={"Welcome"}
       description="Python libraries to analyze and visualize SSLS SUV beamline data<head />">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">

@@ -1,9 +1,10 @@
 module.exports = {
   someSidebar: {
     Docs: [
-      'gs', 
-      'modules',
-      'examples'
+      'gs',
+      'examples',
+      'glossary',
+      'license',
     ],
   },
 };

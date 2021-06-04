@@ -33,14 +33,14 @@ def lock_peak(data, refdata, x1='', x2='', E_col=0, I_col=9, I0_col=4):
     diff_id = peak_id - ref_peak_id
 
     if diff_id > 0:
-        for ii in range(diff_id):
+        for _ in range(diff_id):
             data = np.delete(data, 0, 0)
             data = np.vstack((data, data[-1, :]))
     elif diff_id < 0:
-        for ii in range(abs(diff_id)):
+        for _ in range(abs(diff_id)):
             data = np.delete(data, -1, 0)
             data = np.vstack((data[0, :], data))
-    
+
     data[:, E_col] = refdata[:, E_col]
 
     return data

@@ -1,23 +1,32 @@
-### SUV Tools
+<h1 align="center">
+  <p align="center">SUV Tools</p>
+</h1>
+
+<p align="center">
+  <a href="https://github.com/pranabdas/suvtools/actions/workflows/python-tests.yml"><img src="https://github.com/pranabdas/suvtools/actions/workflows/python-tests.yml/badge.svg" alt="Python tests status"></a>
+  <a href="https://github.com/pranabdas/suvtools/blob/master/LICENSE"><img src="https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?colorB=A31F34"></a>
+</p>
+
 
 Visit the project homepage <https://pranabdas.github.io/suvtools/>
 
-#### Quick start
+## Quick start
 
-Clone this repository:
-```sh
-git clone --depth 1 https://github.com/pranabdas/suvtools.git
+Clone or [download](https://github.com/pranabdas/suvtools/releases) this
+repository:
+```console
+git clone https://github.com/pranabdas/suvtools.git
 ```
 
 Install required python packages:
-```sh
+```console
 pip3 install --upgrade -r requirements.txt
 ```
 
-Import SUVTools in your project (unless the library folder is in your working
+Import suvtools into your project (unless the library folder is in your working
 directory or any of the python lookup paths, you need to add the parent folder
 path):
-```py
+```python
 import sys
 sys.path.append("/parent/suvtools/folder/")
 import suvtools as suv
@@ -55,15 +64,17 @@ whole range is integrated.
 
 See the notebook for some example usage.
 
-### Development (documentation)
-```
-git clone https://github.com/pranabdas/suvtools.git
+### Documentation development
+```console
+# install npm packages
 npm install
-npm start
-```
 
-### Deployment (documentation to GitHub pages)
-```
+# serve locally
+npm start
+
+# build
 npm run build
+
+# deploy to github
 npm run gh-deploy
 ```
