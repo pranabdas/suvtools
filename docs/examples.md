@@ -12,7 +12,7 @@ import suvtools as suv
 
 ## Load data
 ```python
-data = suv.load("suvtools/dataset/sample_data.txt", 12)
+data = suv.load("../dataset/sample_data.txt", 12)
 ```
 
 Let us print the first 2 rows:
@@ -49,7 +49,7 @@ plt.ylabel("Intensity (a.u.)")
 plt.xlim(10, 130)
 plt.show()
 ```
-![Plot 1](../static/img/output-01.png)
+![Plot 1](/img/output-01.png)
 
 ## Fit Gaussian
 ```python
@@ -75,12 +75,13 @@ plt.legend()
 plt.show()
 ```
 
-![Plot 2](../static/img/output-02.png)
+![Plot 2](/img/output-02.png)
 
 ## Locking peak position
 Let us work with a XAS dataset. Here we want to lock the peak of second spectra
 at same energy as first spectra. We are interested only in the first peak,
-therefore limit the peak search to [525, 535].
+therefore limit the peak search to [525, 535]. If any limit is not provided, by
+default the program will search for maximum in the entire range.
 
 ```python
 s1 = suv.load("../dataset/sample_XAS.txt", 1)
@@ -93,7 +94,9 @@ s2 = suv.lock_peak(s2, s1, 525, 535)
 
 The program removes linear background based on data values at energy point 520
 eV and 528 eV (it finds two data point and calculates slope and intersection).
-Then normalize the intensity corresponding to energy value 545 eV.
+Then normalize the intensity corresponding to energy value 545 eV (if the
+normalization location is not provided, the normalization is done at tail/end
+point).
 
 ```python
 i1 = suv.norm_bg(s1[:, 0], s1[:, 9]/s1[:, 4], 520, 528, 545)
@@ -111,7 +114,13 @@ plt.legend(frameon=False)
 plt.show()
 ```
 
-![Plot 3](../static/img/output-03.png)
+![Plot 3](/img/output-03.png)
+
+If you want to normalize at the highest peak, you can find the energy value
+corresponding to the maximum intensity by:
+```python
+energy_imax = s1[:, 0][np.argmax(s1[:, 9]/s1[:, 4])
+```
 
 ## Save plaintext
 
@@ -162,4 +171,4 @@ plt.xlim(840, 880)
 plt.show()
 ```
 
-![Curve Smoothing](../static/img/curve-smoothing.png)
+![Curve Smoothing](/img/curve-smoothing.png)

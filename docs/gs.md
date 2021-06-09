@@ -60,7 +60,7 @@ RUN apt update && apt upgrade -y
 RUN apt install -y python3 python3-pip
 
 # Install pip packages
-RUN pip3 install jupyterlab numpy scipy matplotlib
+RUN pip3 install jupyterlab numpy scipy matplotlib pandas
 
 # jupyterlab settings
 RUN mkdir /etc/jupyter && \

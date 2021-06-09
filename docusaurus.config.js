@@ -13,7 +13,7 @@ module.exports = {
   themeConfig: {
     prism: {
       theme: require("prism-react-renderer/themes/github"),
-      darkTheme: require("prism-react-renderer/themes/dracula"),
+      darkTheme: require("prism-react-renderer/themes/nightOwl"),
       additionalLanguages: ["docker"],
     },
     hideableSidebar: true,
@@ -23,6 +23,7 @@ module.exports = {
     //     // darkIcon: '☾',
     //     // lightIcon: "☀️"
     //   },
+    //   respectPrefersColorScheme: true,
     // },
     navbar: {
       title: "SUV Tools",
@@ -36,9 +37,63 @@ module.exports = {
           activeBasePath: "docs",
           label: "Docs",
           position: "left",
+          items: [
+            {
+              label: "SUV Tools",
+              to: "docs/",
+            },
+            {
+              label: "~ ~ ~ Other Docs ~ ~ ~",
+            },
+            {
+              label: "ARPES Python Tools",
+              to: "https://pranabdas.github.io/arpespythontools/",
+              target: "_self",
+            },
+            {
+              label: "Linux Tutorial",
+              to: "https://pranabdas.github.io/linux/",
+              target: "_self",
+            },
+            {
+              label: "Machine Learning Notes",
+              to: "https://pranabdas.github.io/machine-learning/",
+              target: "_self",
+            },
+            {
+              label: "Python Tutorial",
+              to: "https://pranabdas.github.io/python-tutorial/",
+              target: "_self",
+            },
+            {
+              label: "Quantum Espresso Tutorial",
+              to: "https://pranabdas.github.io/espresso/",
+              target: "_self",
+            },
+            {
+              label: "Condensed Matter Notes",
+              href: "https://pranabdas.github.io/docs/condmat-notes/",
+            },
+            {
+              label: "Fortran Programming",
+              href: "https://pranabdas.github.io/docs/fortran/",
+            },
+            {
+              label: "FullProf Tutorial",
+              href: "https://pranabdas.github.io/docs/fullprof/",
+            },
+            {
+              label: "Javascript Tutorial",
+              href: "https://pranabdas.github.io/docs/js-learning/",
+            },
+            {
+              label: "SUV ARPES Manual",
+              href: "https://pranabdas.github.io/docs/arpes-suv-man/",
+            },
+          ],
         },
         {
-          href: "https://pranabdas.github.io",
+          to: "https://pranabdas.github.io",
           label: "About me",
           position: "left",
           target: "_self",
