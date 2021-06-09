@@ -3,7 +3,7 @@
 """
 Program: Load SUV data
 Version: 20210604
-@author: Pranab Das (Twitter: @pranab_das)
+@author: Pranab Das (GitHub: @pranabdas)
 data = suv.load("data.txt", 12)
 """
 

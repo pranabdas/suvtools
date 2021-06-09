@@ -3,7 +3,7 @@
 """
 Program: Fit peaks with Lorentzian distribution
 Version: 20201123
-@author: Pranab Das (Twitter: @pranab_das)
+@author: Pranab Das (GitHub: @pranabdas)
 data = suv.fit_lorentz(x, y, a='', x0='', gamma='', xmin='', xmax='')
 """
 
@@ -13,7 +13,7 @@ def fit_lorentz(x, y, a='', x0='', gamma='', xmin='', xmax='', num=1000):
 
     def lorentz(x, a, x0, gamma):
         return a*gamma**2/(np.pi*gamma*((x - x0)**2 + gamma**2))
-    
+
     if xmin:
         xmin = float(xmin)
         xmin_id = np.where(abs(x-xmin)==min(abs(x-xmin)))[0][0]
@@ -21,7 +21,7 @@ def fit_lorentz(x, y, a='', x0='', gamma='', xmin='', xmax='', num=1000):
         y = y[xmin_id:]
     else:
         xmin = x[0]
-        
+
     if xmax:
         xmax = float(xmax)
         xmax_id = np.where(abs(x-xmax)==min(abs(x-xmax)))[0][0]
@@ -32,10 +32,10 @@ def fit_lorentz(x, y, a='', x0='', gamma='', xmin='', xmax='', num=1000):
 
     if not a:
         a = max(y)
-    
+
     if not x0:
         x0 =  x[np.where(y==max(y))][0]
-        
+
     if not gamma:
         gamma = abs(x[-1] - x[0])/10
 
@@ -46,5 +46,5 @@ def fit_lorentz(x, y, a='', x0='', gamma='', xmin='', xmax='', num=1000):
 
     fit_x = np.linspace(xmin, xmax, num)
     fit_y = lorentz(fit_x, params[0], params[1], params[2])
-    
+
     return fit_x, fit_y
