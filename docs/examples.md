@@ -4,7 +4,7 @@ title: Examples
 ---
 ## Import suvtools
 ```python
-# If suvtools is not in your working directory uncomment following two lines
+# if suvtools is not under working directory uncomment following two lines
 # import sys
 # sys.path.append("/parent/suvtools/folder/")
 import suvtools as suv
@@ -36,7 +36,7 @@ It is also possible to load data from URL address as well.
 :::
 
 ## Plot
-```python
+```python showLineNumbers
 x = data[:, 0]
 y = data[:, 6]
 
@@ -65,7 +65,7 @@ FWHM = 0.182666371356206
 ```
 
 Let us plot the results:
-```python
+```python showLineNumbers
 plt.plot(x, y/max(y), 'o', markersize=2, label='Data')
 plt.plot(x_fit, y_fit/max(y_fit), label='Gaussian fit')
 plt.xlabel("$2\\theta (deg)$")
@@ -98,7 +98,7 @@ Then normalize the intensity corresponding to energy value 545 eV (if the
 normalization location is not provided, the normalization is done at tail/end
 point).
 
-```python
+```python showLineNumbers
 i1 = suv.norm_bg(s1[:, 0], s1[:, 9]/s1[:, 4], 520, 528, 545)
 i2 = suv.norm_bg(s2[:, 0], s2[:, 9]/s2[:, 4], 520, 528, 545)
 
@@ -144,8 +144,8 @@ suv.save_csv("sample_data.txt", "data.csv", 12)
 If the data is noisy, we can apply filters to smoothen it. Here is an example of
 applying Gaussian filter:
 
-```python
-# import neccesary packages
+```python showLineNumbers
+# import necessary packages
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.ndimage.filters import gaussian_filter1d
@@ -158,7 +158,7 @@ plt.rcParams['figure.facecolor'] = 'white'
 data = np.loadtxt("data.txt")
 x, y = data[:, 0], (data[:, 1] - min(data[:, 1]))/(max(data[:, 1]) - min(data[:, 1]))
 
-# appy Gaussian filter to y
+# apply Gaussian filter to y
 y_smth = gaussian_filter1d(y, sigma=2.5)
 
 # make plots

@@ -29,15 +29,14 @@ const features = [
     ),
   },
   {
-    title: 'Download or use Web App',
+    title: 'Download or use Webapp',
     // imageUrl: 'img/undraw_docusaurus_react.svg',
     description: (
       <>
-        Download the ZIP archive of the package{" "}
-        <a href="https://github.com/pranabdas/suvtools/releases">here</a>. If
-        you only need to export data to CSV or plaintext format for another
-        application, you may use {" "}<a href="https://suv.netlify.app">this
-        webapp</a> instead.
+        Download the Python{" "}
+        <a href="https://github.com/pranabdas/suvtools/releases">package</a>, or
+        use the <a href="https://suv.netlify.app">webapp</a> if you only need to
+        export data columns to plaintext format.
       </>
     ),
   },

@@ -49,7 +49,7 @@ https://pranabdas.github.io/python-tutorial/).
 ### Run suvtools along with Jupyter notebook in Docker:
 
 Here is a sample dockerfile. You can adjust according to your needs:
-```dockerfile title="Dockerfile"
+```dockerfile title="Dockerfile" showLineNumbers
 # Start from Ubuntu 20.04 LTS
 FROM ubuntu:focal
 
