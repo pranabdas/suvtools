@@ -49,7 +49,11 @@ plt.ylabel("Intensity (a.u.)")
 plt.xlim(10, 130)
 plt.show()
 ```
-![Plot 1](/img/output-01.png)
+
+<picture>
+  <source type="image/webp" srcset={require("/img/output-01.webp").default} />
+  <img src={require("/img/output-01.png").default} alt="output-01" />
+</picture>
 
 ## Fit Gaussian
 ```python
@@ -75,7 +79,10 @@ plt.legend()
 plt.show()
 ```
 
-![Plot 2](/img/output-02.png)
+<picture>
+  <source type="image/webp" srcset={require("/img/output-02.webp").default} />
+  <img src={require("/img/output-02.png").default} alt="output-02" />
+</picture>
 
 ## Locking peak position
 Let us work with a XAS dataset. Here we want to lock the peak of second spectra
@@ -114,7 +121,10 @@ plt.legend(frameon=False)
 plt.show()
 ```
 
-![Plot 3](/img/output-03.png)
+<picture>
+  <source type="image/webp" srcset={require("/img/output-03.webp").default} />
+  <img src={require("/img/output-03.png").default} alt="output-03" />
+</picture>
 
 If you want to normalize at the highest peak, you can find the energy value
 corresponding to the maximum intensity by:
@@ -171,4 +181,7 @@ plt.xlim(840, 880)
 plt.show()
 ```
 
-![Curve Smoothing](/img/curve-smoothing.png)
+<picture>
+  <source type="image/webp" srcset={require("/img/curve-smoothing.webp").default} />
+  <img src={require("/img/curve-smoothing.png").default} alt="curve-smoothing" />
+</picture>
