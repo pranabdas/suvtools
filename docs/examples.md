@@ -51,7 +51,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/output-01.webp").default} />
+  <source type="image/webp" srcSet={require("/img/output-01.webp").default} />
   <img src={require("/img/output-01.png").default} alt="output-01" />
 </picture>
 
@@ -80,7 +80,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/output-02.webp").default} />
+  <source type="image/webp" srcSet={require("/img/output-02.webp").default} />
   <img src={require("/img/output-02.png").default} alt="output-02" />
 </picture>
 
@@ -122,7 +122,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/output-03.webp").default} />
+  <source type="image/webp" srcSet={require("/img/output-03.webp").default} />
   <img src={require("/img/output-03.png").default} alt="output-03" />
 </picture>
 
@@ -182,6 +182,6 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/curve-smoothing.webp").default} />
+  <source type="image/webp" srcSet={require("/img/curve-smoothing.webp").default} />
   <img src={require("/img/curve-smoothing.png").default} alt="curve-smoothing" />
 </picture>
