@@ -10,6 +10,7 @@ data = suv.load("data.txt", 12)
 def load(filename, scan=-1):
     import numpy as np
     import urllib.request
+    import itertools
 
     if (filename[:7]=='http://') or (filename[:8]=='https://'):
         web=True
@@ -31,6 +32,9 @@ def load(filename, scan=-1):
             contents = fid.read()
         fid.close()
         contents = contents.splitlines()
+
+    # remove empty lines
+    # contents = list(filter(None, contents))
 
     # find scan id and corresponding line numbers
     scan_id = []
@@ -61,14 +65,18 @@ def load(filename, scan=-1):
             line_end = line_id[np.where(scan_id==scan)[0][0] +1] - 1
 
     # Extract the column names
-    for line in range(line_end-line_start):
-        line_content = contents[line+line_start].split(' ')
-        if line_content[0]=='#L':
-            colnames=line_content
-            colnames.pop(0)
-            colnames = list(filter(None, colnames))
+    # for line in range(line_end-line_start):
+    #     line_content = contents[line+line_start].split(' ')
+    #     if line_content[0]=='#L':
+    #         colnames=line_content
+    #         colnames.pop(0)
+    #         colnames = list(filter(None, colnames))
+    #     break
 
     # print("Scan #", scan, "loaded. Data columns are: \n", colnames)
 
-    return np.loadtxt(filename, comments='#', skiprows=line_start-1, \
-                      max_rows=(line_end-line_start))
+    # https://numpy.org/doc/stable/release/1.23.0-notes.html#np-loadtxt-has-recieved-several-changes
+    lines_to_read = itertools.islice(open(filename), line_start, line_end)
+    filtered_lines = itertools.dropwhile(lambda x: x[:1] == '#', lines_to_read)
+
+    return np.loadtxt(filtered_lines)

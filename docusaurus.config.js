@@ -13,6 +13,7 @@ async function config() {
     favicon: "img/favicon.ico",
     organizationName: "pranabdas",
     projectName: "suvtools",
+    titleDelimiter: "•",
     themeConfig:
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({

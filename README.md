@@ -78,3 +78,8 @@ npm run build
 # deploy to github
 npm run gh-deploy
 ```
+
+### Python tests
+```console
+python3 -m unittest tests.py
+```
