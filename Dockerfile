@@ -4,8 +4,8 @@
 #                : jupyter-notebook --ip 0.0.0.0
 #                : jupyter-notebook --ip 0.0.0.0 --port 9999
 
-# Start from Ubuntu 20.04 LTS
-FROM ubuntu:focal
+# Start from Ubuntu 22.04 LTS
+FROM ubuntu:jammy
 
 # Update OS
 RUN apt update && apt upgrade -y
