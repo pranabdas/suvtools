@@ -2,12 +2,13 @@
 # -*- coding: utf-8 -*-
 """
 Program: Lock the peaks at same energy location
-Version: 20210219
+Version: 20220214
 @author: Pranab Das (GitHub: @pranabdas)
-data = suv.lock_peak(data, refdata, x1='', x2='', E_col=0, I_col=9, I0_col=4)
+data = suv.lock_peak(data, refdata, x1=None, x2=None, E_col=0, I_col=9, I0_col=4)
 """
 
-def lock_peak(data, refdata, x1='', x2='', E_col=0, I_col=9, I0_col=4):
+
+def lock_peak(data, refdata, x1=None, x2=None, E_col=0, I_col=9, I0_col=4):
     import numpy as np
 
     if data.shape != refdata.shape:
@@ -19,16 +20,13 @@ def lock_peak(data, refdata, x1='', x2='', E_col=0, I_col=9, I0_col=4):
     if not x2:
         x2 = refdata[-1, E_col]
 
-    # x1_id = np.where(refdata[:, E_col]==x1)[0][0]
-    x1_id = np.where(abs(refdata[:, E_col]-x1)==min(abs(refdata[:, E_col]-x1)))[0][0]
-    # x2_id = np.where(refdata[:, E_col]==x2)[0][0]
-    x2_id = np.where(abs(refdata[:, E_col]-x2)==min(abs(refdata[:, E_col]-x2)))[0][0]
+    x1_id = np.argmin(abs(refdata[:, E_col] - x1))
+    x2_id = np.argmin(abs(refdata[:, E_col] - x2))
 
-    ref_peak_id = np.where(refdata[x1_id:x2_id, I_col]/refdata[x1_id:x2_id, I0_col]\
-              ==max(refdata[x1_id:x2_id, I_col]/refdata[x1_id:x2_id, I0_col]))[0][0]
+    ref_peak_id = np.argmax(
+        refdata[x1_id: x2_id, I_col] / refdata[x1_id: x2_id, I0_col])
 
-    peak_id = np.where(data[x1_id:x2_id, I_col]/data[x1_id:x2_id, I0_col]==\
-              max(data[x1_id:x2_id, I_col]/data[x1_id:x2_id, I0_col]))[0][0]
+    peak_id = np.argmax(data[x1_id: x2_id, I_col] / data[x1_id: x2_id, I0_col])
 
     diff_id = peak_id - ref_peak_id
 

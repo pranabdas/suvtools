@@ -17,7 +17,7 @@ async function config() {
     themeConfig:
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
-        metadata: [{name: 'theme-color', content: '#006bb3'}],
+        metadata: [{ name: "theme-color", content: "#006bb3" }],
         prism: {
           theme: require("prism-react-renderer/themes/github"),
           darkTheme: require("prism-react-renderer/themes/nightOwl"),
@@ -173,7 +173,7 @@ async function config() {
           hashed: true,
           docsRouteBasePath: "/docs",
           indexBlog: false,
-          indexPages:true,
+          indexPages: true,
           highlightSearchTermsOnTargetPage: true,
         },
       ],
