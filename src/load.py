@@ -2,25 +2,26 @@
 # -*- coding: utf-8 -*-
 """
 Program: Load SUV data
-Version: 20210604
+Version: 20220214
 @author: Pranab Das (GitHub: @pranabdas)
 data = suv.load("data.txt", 12)
 """
 
-def load(filename, scan=-1):
+
+def load(filename, scan=None):
     import numpy as np
     import urllib.request
     import itertools
 
-    if (filename[:7]=='http://') or (filename[:8]=='https://'):
-        web=True
+    if (filename[:7] == 'http://') or (filename[:8] == 'https://'):
+        web = True
     else:
-        web=False
+        web = False
 
     if (web):
         try:
             headers = {'User-Agent': 'Mozilla/5.0'}
-            req = urllib.request.Request(url = filename, headers = headers)
+            req = urllib.request.Request(url=filename, headers=headers)
             contents = urllib.request.urlopen(req).read().decode()
             contents = contents.splitlines()
         except:
@@ -28,7 +29,7 @@ def load(filename, scan=-1):
 
     else:
         fid = open(filename, 'r')
-        if fid.mode == 'r' :
+        if fid.mode == 'r':
             contents = fid.read()
         fid.close()
         contents = contents.splitlines()
@@ -42,14 +43,14 @@ def load(filename, scan=-1):
 
     for line in range(len(contents)):
         line_content = contents[line].split(' ')
-        if line_content[0]=='#S':
+        if line_content[0] == '#S':
             scan_id.append(int(line_content[1]))
             line_id.append(line)
 
     scan_id = np.array(scan_id)
     # Determine the lines to read for specific scan
     # Default scan set to the last scan
-    if scan==-1:
+    if not scan:
         scan = scan_id[-1]
 
     # In case given scan does not exist in the file
@@ -57,12 +58,12 @@ def load(filename, scan=-1):
         print("Error! Scan not found!")
         return
     else:
-        line_start = line_id[np.where(scan_id==scan)[0][0]]
+        line_start = line_id[np.where(scan_id == scan)[0][0]]
 
-        if scan==scan_id[-1]:
+        if scan == scan_id[-1]:
             line_end = len(contents)
         else:
-            line_end = line_id[np.where(scan_id==scan)[0][0] +1] - 1
+            line_end = line_id[np.where(scan_id == scan)[0][0] + 1] - 1
 
     # Extract the column names
     # for line in range(line_end-line_start):
@@ -77,6 +78,7 @@ def load(filename, scan=-1):
 
     # https://numpy.org/doc/stable/release/1.23.0-notes.html#np-loadtxt-has-recieved-several-changes
     lines_to_read = itertools.islice(open(filename), line_start, line_end)
-    filtered_lines = itertools.dropwhile(lambda x: x[:1] == '#', lines_to_read)
+    filtered_lines = itertools.dropwhile(
+        lambda x: x.strip()[0] == '#', lines_to_read)
 
     return np.loadtxt(filtered_lines)

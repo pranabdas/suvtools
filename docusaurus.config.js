@@ -10,14 +10,14 @@ async function config() {
     baseUrl: "/suvtools/",
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
-    favicon: "img/favicon.ico",
+    favicon: "img/favicon.png",
     organizationName: "pranabdas",
     projectName: "suvtools",
     titleDelimiter: "•",
     themeConfig:
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
-        metadata: [{name: 'theme-color', content: '#006bb3'}],
+        metadata: [{ name: "theme-color", content: "#006bb3" }],
         prism: {
           theme: require("prism-react-renderer/themes/github"),
           darkTheme: require("prism-react-renderer/themes/nightOwl"),
@@ -42,7 +42,7 @@ async function config() {
           hideOnScroll: true,
           logo: {
             alt: "SUV Tools Logo",
-            src: "img/favicon.ico",
+            src: "img/favicon.png",
           },
           items: [
             {
@@ -173,7 +173,7 @@ async function config() {
           hashed: true,
           docsRouteBasePath: "/docs",
           indexBlog: false,
-          indexPages:true,
+          indexPages: true,
           highlightSearchTermsOnTargetPage: true,
         },
       ],
