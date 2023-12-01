@@ -26,6 +26,7 @@ integration. Optional inputs.
 - `area` : number (float). Area under the curve. Could take negative values
 (e.g., $y$ is negative and $x$ is positive).
 
+
 ## fit_gauss
 
 ```python
@@ -102,6 +103,7 @@ scan.
 
 - `data` : 2D array. Rows represent different data points, while the columns
 are different parameters (energy, intensity etc.).
+
 
 ## lock_peak
 

@@ -2,7 +2,9 @@
 id: examples
 title: Examples
 ---
+
 ## Import suvtools
+
 ```python
 # if suvtools is not under working directory uncomment following two lines
 # import sys
@@ -10,7 +12,9 @@ title: Examples
 import suvtools as suv
 ```
 
+
 ## Load data
+
 ```python
 data = suv.load("../dataset/sample_data.txt", 12)
 ```
@@ -35,7 +39,9 @@ It is also possible to load data from URL address as well.
 
 :::
 
+
 ## Plot
+
 ```python showLineNumbers
 x = data[:, 0]
 y = data[:, 6]
@@ -84,7 +90,9 @@ plt.show()
   <img src={require("/img/output-02.png").default} alt="output-02" />
 </picture>
 
+
 ## Locking peak position
+
 Let us work with a XAS dataset. Here we want to lock the peak of second spectra
 at same energy as first spectra. We are interested only in the first peak,
 therefore limit the peak search to [525, 535]. If any limit is not provided, by
@@ -96,6 +104,7 @@ s2 = suv.load("../dataset/sample_XAS.txt", 2)
 
 s2 = suv.lock_peak(s2, s1, 525, 535)
 ```
+
 
 ## Background removal and normalization
 
@@ -132,6 +141,7 @@ corresponding to the maximum intensity by:
 energy_imax = s1[:, 0][np.argmax(s1[:, 9]/s1[:, 4])
 ```
 
+
 ## Save plaintext
 
 Say you want to save the energy and normalized intensity in plaintext to work
@@ -143,11 +153,14 @@ data = np.array([s1[:, 0], i1]).T
 np.savetxt("data.txt", data)
 ```
 
+
 ## Save CSV
+
 We can save the full scan in a **.csv** file as well.
 ```python
 suv.save_csv("sample_data.txt", "data.csv", 12)
 ```
+
 
 ## Curve smoothing
 
