@@ -52,9 +52,12 @@ class Test(unittest.TestCase):
     def test_norm_bg(self):
         i1 = norm_bg(s1[:, 0], s1[:, 9]/s1[:, 4], 520, 528, 545)
         i2 = norm_bg(s2[:, 0], s2[:, 9]/s2[:, 4], 520, 528, 545)
-        self.assertEqual(i1[np.where(s1[:, 0] == 545)[0][0]],
-                         i2[np.where(s1[:, 0] == 545)[0][0]])
-
+        i3 = norm_bg(s1[:, 0], s1[:, 9]/s1[:, 4], 520, 528)
+        i4 = norm_bg(s2[:, 0], s2[:, 9]/s2[:, 4], 520, 528)
+        self.assertEqual(i1[np.where(s1[:, 0] == 545)[0][0]], 1.0)
+        self.assertEqual(i2[np.where(s1[:, 0] == 545)[0][0]], 1.0)
+        self.assertEqual(i3[-1], 1.0)
+        self.assertEqual(i4[-1], 1.0)
 
 if __name__ == "__main__":
     unittest.main()
