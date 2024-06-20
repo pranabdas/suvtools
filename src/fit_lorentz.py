@@ -13,7 +13,7 @@ def fit_lorentz(x, y, a=None, x0=None, gamma=None, xmin=None, xmax=None, num=100
     from scipy import optimize
 
     def lorentz(x, a, x0, gamma):
-        return a * gamma**2 / (np.pi * gamma * ((x - x0)**2 + gamma**2))
+        return a * gamma**2 / (np.pi * gamma * ((x - x0) ** 2 + gamma**2))
 
     if xmin:
         xmin = float(xmin)
@@ -42,8 +42,17 @@ def fit_lorentz(x, y, a=None, x0=None, gamma=None, xmin=None, xmax=None, num=100
 
     params, _ = optimize.curve_fit(lorentz, x, y, p0=[a, x0, gamma])
 
-    print("a =", params[0], "\nx0 =", params[1], "\ngamma =", params[2],
-          "\nFWHM =", 2 * params[2])
+    print(
+        "\n#---- Lorentzian fitting parameters ----#\na =",
+        params[0],
+        "\nx0 =",
+        params[1],
+        "\ngamma =",
+        params[2],
+        "\nFWHM =",
+        2 * params[2],
+        "\n#---------------------------------------#",
+    )
 
     fit_x = np.linspace(xmin, xmax, num)
     fit_y = lorentz(fit_x, params[0], params[1], params[2])

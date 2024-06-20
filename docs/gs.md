@@ -4,7 +4,9 @@ title: Getting started
 sidebar_label: Getting started
 slug: /
 ---
+
 ### Getting the code
+
 If you are using git, you can clone the project by:
 ```bash
 git clone https://github.com/pranabdas/suvtools.git
@@ -12,6 +14,7 @@ git clone https://github.com/pranabdas/suvtools.git
 
 You can also download the ZIP archive of the package [here](
 https://github.com/pranabdas/suvtools/releases).
+
 
 ### Requirements
 
@@ -25,7 +28,9 @@ Alternatively, you can install the packages using `requirements.txt`:
 pip3 install --upgrade -r requirements.txt
 ```
 
+
 ### Importing suvtools modules into your program:
+
 If the `suvtools` directory is inside your project directory, you can import using:
 ```python
 import suvtools as suv
@@ -45,6 +50,7 @@ If you are new to python programming, you can check out my [python tutorial](
 https://pranabdas.github.io/python-tutorial/).
 
 :::
+
 
 ### Run suvtools along with Jupyter notebook in Docker:
 

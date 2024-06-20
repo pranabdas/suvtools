@@ -23,10 +23,9 @@ def lock_peak(data, refdata, x1=None, x2=None, E_col=0, I_col=9, I0_col=4):
     x1_id = np.argmin(abs(refdata[:, E_col] - x1))
     x2_id = np.argmin(abs(refdata[:, E_col] - x2))
 
-    ref_peak_id = np.argmax(
-        refdata[x1_id: x2_id, I_col] / refdata[x1_id: x2_id, I0_col])
+    ref_peak_id = np.argmax(refdata[x1_id:x2_id, I_col] / refdata[x1_id:x2_id, I0_col])
 
-    peak_id = np.argmax(data[x1_id: x2_id, I_col] / data[x1_id: x2_id, I0_col])
+    peak_id = np.argmax(data[x1_id:x2_id, I_col] / data[x1_id:x2_id, I0_col])
 
     diff_id = peak_id - ref_peak_id
 

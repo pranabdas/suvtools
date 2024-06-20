@@ -13,7 +13,7 @@ def fit_gauss(x, y, a=None, x0=None, sigma=None, xmin=None, xmax=None, num=1000)
     from scipy import optimize
 
     def gauss(x, a, x0, sigma):
-        return a * np.exp(-(x - x0)**2 / (2 * sigma**2))
+        return a * np.exp(-((x - x0) ** 2) / (2 * sigma**2))
 
     if xmin:
         xmin = float(xmin)
@@ -42,8 +42,17 @@ def fit_gauss(x, y, a=None, x0=None, sigma=None, xmin=None, xmax=None, num=1000)
 
     params, _ = optimize.curve_fit(gauss, x, y, p0=[a, x0, sigma])
 
-    print("a =", params[0], "\nx0 =", params[1], "\nsigma =", params[2],
-          "\nFWHM =", 2.355 * params[2])
+    print(
+        "\n#---- Gaussian fitting parameters ----#\na =",
+        params[0],
+        "\nx0 =",
+        params[1],
+        "\nsigma =",
+        params[2],
+        "\nFWHM =",
+        2.355 * params[2],
+        "\n#----------------------------------------#",
+    )
 
     fit_x = np.linspace(xmin, xmax, num)
     fit_y = gauss(fit_x, params[0], params[1], params[2])

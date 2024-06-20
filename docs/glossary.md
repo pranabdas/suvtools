@@ -124,7 +124,8 @@ int_corr = suv.norm_bg(energy, intensity, x1, x2, x_norm_loc=None)
 Removes linear background, and normalizes the data. `x1`, `x2` are energy values
 that determines the slope of the background. By default the normalization done
 at the tail point of the spectra. It can be changed to other point, enter the
-corresponding energy value as `x_norm_loc`.
+corresponding energy value as `x_norm_loc`. The intention is to normalize at an
+energy value away from the peaks/features of interest.
 
 
 ## save_csv

@@ -59,7 +59,8 @@ scan number is not specified, it will read the last scan from the file.
 Removes linear background, and normalizes the data. x1, x2 are energy values
 that determines the slope of the background. By default the normalization done
 at the tail point of the spectra. It can be changed to other point, enter the
-corresponding energy value.
+corresponding energy value. The intention is to normalize at an energy value
+away from the peaks/features of interest.
 
 - `suv.lock_peak(data, refdata, x1=None, x2=None, E_col=0, I_col=9, I0_col=4)`:
 Locks peak position with respect to the reference data. It locks the maximum of

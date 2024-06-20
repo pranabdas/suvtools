@@ -14,7 +14,7 @@ def save_csv(filename, csvname=None, scan=None):
     import os
     import warnings
 
-    fid = open(filename, 'r')
+    fid = open(filename, "r")
     contents = fid.read()
     fid.close()
     contents = contents.splitlines()
@@ -24,8 +24,8 @@ def save_csv(filename, csvname=None, scan=None):
     line_id = []
 
     for line in range(len(contents)):
-        line_content = contents[line].split(' ')
-        if line_content[0] == '#S':
+        line_content = contents[line].split(" ")
+        if line_content[0] == "#S":
             scan_id.append(int(line_content[1]))
             line_id.append(line)
 
@@ -46,17 +46,17 @@ def save_csv(filename, csvname=None, scan=None):
             line_end = line_id[scan] - 1
 
     if not csvname:
-        csvname = filename + '_scan_' + str(scan) + '.csv'
+        csvname = filename + "_scan_" + str(scan) + ".csv"
 
     if os.path.isfile(csvname):
-        if csvname[-4:] == '.csv':
+        if csvname[-4:] == ".csv":
             csvname = csvname[:-4]
-        csvname = csvname + '_copy.csv'
+        csvname = csvname + "_copy.csv"
 
     # Extract the column names
-    for line in range(line_end-line_start):
-        line_content = contents[line + line_start].split(' ')
-        if line_content[0] == '#L':
+    for line in range(line_end - line_start):
+        line_content = contents[line + line_start].split(" ")
+        if line_content[0] == "#L":
             colnames = line_content
             colnames.pop(0)
             colnames = list(filter(None, colnames))
@@ -64,8 +64,12 @@ def save_csv(filename, csvname=None, scan=None):
     # suppress numpy warning related to max_rows behavior
     with warnings.catch_warnings():
         warnings.filterwarnings(action="ignore")
-        data = np.loadtxt(filename, comments='#', skiprows=(line_start - 1),
-                          max_rows=(line_end - line_start))
+        data = np.loadtxt(
+            filename,
+            comments="#",
+            skiprows=(line_start - 1),
+            max_rows=(line_end - line_start),
+        )
 
     # convert to dataframe
     data = pd.DataFrame(data, columns=colnames)

@@ -20,8 +20,8 @@ def norm_bg(energy, intensity, x1, x2, x_norm_loc=None):
         x_norm_loc = -1
 
     m = (y2 - y1) / (x2 - x1)  # slope
-    c = y1 - (m * x1)          # intersection
+    c = y1 - (m * x1)  # intersection
 
     bg = (m * energy) + c
     intensity -= bg
-    return (intensity / intensity[x_norm_loc])
+    return intensity / intensity[x_norm_loc]

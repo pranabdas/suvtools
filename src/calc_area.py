@@ -21,4 +21,4 @@ def calc_area(y, x, x_start=None, x_end=None):
     else:
         end_index = -1
 
-    return np.trapz(y[start_index: end_index], x[start_index: end_index])
+    return np.trapezoid(y[start_index:end_index], x[start_index:end_index])
