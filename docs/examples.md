@@ -6,9 +6,6 @@ title: Examples
 ## Import suvtools
 
 ```python
-# if suvtools is not under working directory uncomment following two lines
-# import sys
-# sys.path.append("/parent/suvtools/folder/")
 import suvtools as suv
 ```
 

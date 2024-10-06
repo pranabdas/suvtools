@@ -12,23 +12,13 @@ Visit the project homepage <https://pranabdas.github.io/suvtools/>
 
 ## Quick start
 
-Clone or [download](https://github.com/pranabdas/suvtools/releases) this
-repository:
+Install latest stable release:
 ```console
-git clone https://github.com/pranabdas/suvtools.git
+pip3 install --upgrade suvtools
 ```
 
-Install required python packages:
-```console
-pip3 install --upgrade -r requirements.txt
-```
-
-Import suvtools into your project (unless the library folder is in your working
-directory or any of the python lookup paths, you need to add the parent folder
-path):
+Import suvtools into your project:
 ```python
-import sys
-sys.path.append("/parent/suvtools/folder/")
 import suvtools as suv
 ```
 
@@ -94,5 +84,5 @@ npm run gh-deploy
 ### Python tests
 
 ```console
-python3 -m unittest tests.py
+python3 -m unittest discover tests
 ```

@@ -10,12 +10,12 @@ or     : python3 -m unittest test.py
 
 import unittest
 import numpy as np
-from src.load import load
-from src.calc_area import calc_area
-from src.fit_gauss import fit_gauss
-from src.fit_lorentz import fit_lorentz
-from src.lock_peak import lock_peak
-from src.norm_bg import norm_bg
+from suvtools.load import load
+from suvtools.calc_area import calc_area
+from suvtools.fit_gauss import fit_gauss
+from suvtools.fit_lorentz import fit_lorentz
+from suvtools.lock_peak import lock_peak
+from suvtools.norm_bg import norm_bg
 
 data = load("dataset/sample_data.txt", 12)
 s1 = load("dataset/sample_XAS.txt", 1)
