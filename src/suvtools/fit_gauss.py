@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Program: Fit peaks with Gaussian distribution
-Version: 20220214
 @author: Pranab Das (GitHub: @pranabdas)
 data = suv.fit_gauss(x, y, a=None, x0=None, sigma=None, xmin=None, xmax=None)
 """

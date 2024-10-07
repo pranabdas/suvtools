@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Program: Calculate area under the curve
-Version: 20220214
 @author: Pranab Das (GitHub: @pranabdas)
 area = suv.calc_area(y, x, x_end=None, x_end=None)
 """

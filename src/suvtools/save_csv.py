@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Program: Export SUV data in CSV format
-Version: 20220214
 @author: Pranab Das (GitHub: @pranabdas)
 data = suv.save_csv(filename, csvname=None, scan=None)
 """

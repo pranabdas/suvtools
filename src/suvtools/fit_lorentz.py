@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Program: Fit peaks with Lorentzian distribution
-Version: 20220214
 @author: Pranab Das (GitHub: @pranabdas)
 data = suv.fit_lorentz(x, y, a=None, x0=None, gamma=None, xmin=None, xmax=None)
 """

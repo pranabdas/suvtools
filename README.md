@@ -63,7 +63,7 @@ Calculates area under the curve for given `x` and `y` values. `x_start` and
 `x_end` can be specified to set the limit of integration region, if not provided
 whole range is integrated.
 
-See the notebook for some example usage.
+See the notebook and documentation for example usage.
 
 ### Documentation development
 
@@ -76,9 +76,6 @@ npm start
 
 # build
 npm run build
-
-# deploy to github
-npm run gh-deploy
 ```
 
 ### Python tests

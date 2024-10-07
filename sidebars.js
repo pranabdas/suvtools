@@ -1,7 +1,7 @@
 module.exports = {
   docs: [
-    "gs",
-    "examples",
+    "getting-started",
+    "hands-on",
     "glossary",
     "license",
   ],

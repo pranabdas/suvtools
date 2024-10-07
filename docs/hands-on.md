@@ -1,6 +1,5 @@
 ---
-id: examples
-title: Examples
+title: Hands-on
 ---
 
 ## Import suvtools
@@ -9,14 +8,14 @@ title: Examples
 import suvtools as suv
 ```
 
-
 ## Load data
 
 ```python
 data = suv.load("../dataset/sample_data.txt", 12)
 ```
 
-Let us print the first 2 rows:
+Here the 2nd argument to `suv.load` is scan number. Let us print the first 2
+rows:
 ```python
 print(data[:2, :])
 ```
@@ -32,7 +31,12 @@ Output:
 
 :::tip
 
-It is also possible to load data from URL address as well.
+It is also possible to load data from an URL address:
+
+```py
+url = "https://example.com/file.txt"
+data = suv.load(url, 12)
+```
 
 :::
 

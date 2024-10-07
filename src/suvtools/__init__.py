@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Program: SUV tools
-Version: 20220214
 @author: Pranab Das (GitHub: @pranabdas)
 """
 from .load import load

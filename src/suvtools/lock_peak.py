@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Program: Lock the peaks at same energy location
-Version: 20220214
 @author: Pranab Das (GitHub: @pranabdas)
 data = suv.lock_peak(data, refdata, x1=None, x2=None, E_col=0, I_col=9, I0_col=4)
 """

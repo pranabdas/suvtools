@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Program: Load SUV data
-Version: 20220214
 @author: Pranab Das (GitHub: @pranabdas)
 data = suv.load("data.txt", 12)
 """

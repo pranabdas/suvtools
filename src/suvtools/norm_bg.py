@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Program: Subtracts linear background and normalizes the data
-Version: 20240619
 @author: Pranab Das (GitHub: @pranabdas)
 normalized_intensity = suv.norm_bg(energy, intensity, x1, x2, x_norm_loc=None)
 """

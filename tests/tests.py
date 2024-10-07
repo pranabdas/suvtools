@@ -2,20 +2,13 @@
 # -*- coding: utf-8 -*-
 """
 Program: Python unittest
-Version: 20220214
-@author: Pranab Das (Twitter: @pranab_das)
-Run    : python3 test.py
-or     : python3 -m unittest test.py
+@author: Pranab Das (GitHub: @pranab_das)
+Run    : python3 -m unittest discover tests
 """
 
 import unittest
 import numpy as np
-from suvtools.load import load
-from suvtools.calc_area import calc_area
-from suvtools.fit_gauss import fit_gauss
-from suvtools.fit_lorentz import fit_lorentz
-from suvtools.lock_peak import lock_peak
-from suvtools.norm_bg import norm_bg
+from suvtools import load, calc_area, fit_gauss, fit_lorentz, lock_peak, norm_bg
 
 data = load("dataset/sample_data.txt", 12)
 s1 = load("dataset/sample_XAS.txt", 1)
@@ -29,9 +22,7 @@ class Test(unittest.TestCase):
         self.assertAlmostEqual(data[1500, 6], 26.0)
 
     def test_calc_area(self):
-        self.assertAlmostEqual(
-            calc_area(data[:, 6], data[:, 0], 20, 120), 270053.1, places=1
-        )
+        self.assertAlmostEqual(calc_area(data[:, 6], data[:, 0], 20, 120), 270053.1, places=1)
 
     def test_fit_gauss(self):
         x_fit, y_fit = fit_gauss(data[:, 0], data[:, 6], xmin=93, xmax=95)
