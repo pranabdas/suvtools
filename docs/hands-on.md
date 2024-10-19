@@ -57,10 +57,7 @@ plt.xlim(10, 130)
 plt.show()
 ```
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/output-01.webp").default} />
-  <img src={require("/img/output-01.png").default} alt="output-01" />
-</picture>
+![output-01](../static/img/output-01.webp)
 
 ## Fit Gaussian
 ```python
@@ -86,10 +83,7 @@ plt.legend()
 plt.show()
 ```
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/output-02.webp").default} />
-  <img src={require("/img/output-02.png").default} alt="output-02" />
-</picture>
+![output-02](../static/img/output-02.webp)
 
 
 ## Locking peak position
@@ -131,10 +125,7 @@ plt.legend(frameon=False)
 plt.show()
 ```
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/output-03.webp").default} />
-  <img src={require("/img/output-03.png").default} alt="output-03" />
-</picture>
+![output-03](../static/img/output-03.webp)
 
 If you want to normalize at the highest peak, you can find the energy value
 corresponding to the maximum intensity by:
@@ -195,7 +186,4 @@ plt.xlim(840, 880)
 plt.show()
 ```
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/curve-smoothing.webp").default} />
-  <img src={require("/img/curve-smoothing.png").default} alt="curve-smoothing" />
-</picture>
+![curve-smoothing](../static/img/curve-smoothing.webp)
