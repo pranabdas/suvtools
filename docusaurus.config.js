@@ -5,7 +5,7 @@ import rehypeKatex from "rehype-katex";
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "SUV Tools",
-  tagline: "Python libraries to analyze and visualize SSLS SUV beamline data.",
+  tagline: "Python library to analyze and visualize SSLS SUV beamline data.",
   url: "https://pranabdas.github.io",
   baseUrl: "/suvtools/",
   onBrokenLinks: "throw",
