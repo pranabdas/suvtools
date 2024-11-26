@@ -57,7 +57,7 @@ plt.xlim(10, 130)
 plt.show()
 ```
 
-![output-01](../static/img/output-01.webp)
+<img alt="output-01" src={require("../static/img/output-01.webp").default} class="inv-hue-rot-180"/>
 
 ## Fit Gaussian
 ```python
@@ -83,7 +83,7 @@ plt.legend()
 plt.show()
 ```
 
-![output-02](../static/img/output-02.webp)
+<img alt="output-02" src={require("../static/img/output-02.webp").default} class="inv-hue-rot-180"/>
 
 
 ## Locking peak position
@@ -125,7 +125,7 @@ plt.legend(frameon=False)
 plt.show()
 ```
 
-![output-03](../static/img/output-03.webp)
+<img alt="output-03" src={require("../static/img/output-03.webp").default} class="inv-hue-rot-180"/>
 
 If you want to normalize at the highest peak, you can find the energy value
 corresponding to the maximum intensity by:
@@ -186,4 +186,4 @@ plt.xlim(840, 880)
 plt.show()
 ```
 
-![curve-smoothing](../static/img/curve-smoothing.webp)
+<img alt="curve-smothing" src={require("../static/img/curve-smoothing.webp").default} class="inv-hue-rot-180"/>
