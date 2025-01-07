@@ -3,9 +3,21 @@ on:
   push:
     branches:
       - main
+    paths:
+      - dataset/**
+      - poetry.lock
+      - pyproject.toml
+      - src/suvtools/**
+      - tests/**
   pull_request:
     branches:
       - main
+    paths:
+      - dataset/**
+      - poetry.lock
+      - pyproject.toml
+      - src/suvtools/**
+      - tests/**
 
 jobs:
   tests:
