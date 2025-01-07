@@ -1,20 +1,20 @@
 [project]
 name = "suvtools"
-version = "1.0.3"
+version = "1.1.0"
 description = "Python library for analyzing and visualizing SSLS SUV Beamline data."
 authors = [{ name = "Pranab Das" }]
 readme = "README.md"
 license = { text = "MIT" }
-requires-python = ">=3.9,<4.0"
+requires-python = ">=3.10,<4.0"
 keywords = [
     "python", "data-analysis", "matplotlib", "materials-science",
     "condensed-matter-physics"
 ]
 
 dependencies = [
-    "matplotlib>=3.9.2",
-    "numpy>=2.0.2",
-    "scipy>=1.13.1",
+    "matplotlib>=3.10.0",
+    "numpy>=2.2.1",
+    "scipy>=1.15.0",
 ]
 
 [project.optional-dependencies]

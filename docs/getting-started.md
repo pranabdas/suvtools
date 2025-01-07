@@ -6,7 +6,7 @@ slug: /
 
 ### Installation
 
-We will need [Python 3](https://www.python.org/) (version `3.9` - `3.13`)
+We will need [Python 3](https://www.python.org/) (version `3.10` - `3.13`)
 installed in the system. You can check the Python version in your system, using
 `python --version` in a terminal application. We can install latest stable
 release of **suvtools** from PyPI:
@@ -14,6 +14,16 @@ release of **suvtools** from PyPI:
 pip3 install --upgrade suvtools
 ```
 
+:::warning Still using older Python?
+
+If you are still using an older version of Python, please use a compatible
+version. If you are using Python `v3.9`, please install:
+
+```bash
+pip install --upgrade arpespythontools==1.0.*
+```
+
+::::
 
 ### Importing suvtools into your program:
 
