@@ -1,31 +1,43 @@
-[tool.poetry]
+[project]
 name = "suvtools"
-version = "1.0.2"
+version = "1.0.3"
 description = "Python library for analyzing and visualizing SSLS SUV Beamline data."
-authors = ["Pranab Das"]
-license = "MIT"
+authors = [{ name = "Pranab Das" }]
 readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9,<4.0"
+keywords = [
+    "python", "data-analysis", "matplotlib", "materials-science",
+    "condensed-matter-physics"
+]
+
+dependencies = [
+    "matplotlib>=3.9.2",
+    "numpy>=2.0.2",
+    "scipy>=1.13.1",
+]
+
+[project.optional-dependencies]
+lint = [
+    "autopep8>=2.3.1",
+]
+
+notebook = [
+    "jupyterlab>=4.3.4",
+]
+
+test = [
+    "psutil>=6.1.1",
+]
+
+[project.urls]
 homepage = "https://pranabdas.github.io/suvtools/"
 repository = "https://github.com/pranabdas/suvtools"
 documentation = "https://pranabdas.github.io/suvtools/docs/"
-keywords = [
-    "python", "data-analysis", "matplotlib", "materials-science",
-    "condensed-matter-physics"]
 
-[tool.poetry.dependencies]
-python = "^3.9"
-matplotlib = "^3.9.2"
-numpy = "^2.0.2"
-pandas = "^2.2.3"
-scipy = "^1.13.1"
-
-[tool.poetry.group.dev.dependencies]
-autopep8 = "^2.3.1"
-jupyterlab = "^4.2.5"
-
-[tool.poetry.group.tests.dependencies]
-psutil = "^6.0.0"
+[tool.poetry]
+requires-poetry = ">=2.0"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=2.0"]
 build-backend = "poetry.core.masonry.api"

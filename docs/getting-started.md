@@ -4,9 +4,12 @@ sidebar_label: Getting started
 slug: /
 ---
 
-### Getting the code
+### Installation
 
-Install latest stable release:
+We will need [Python 3](https://www.python.org/) (version `3.9` - `3.13`)
+installed in the system. You can check the Python version in your system, using
+`python --version` in a terminal application. We can install latest stable
+release of **suvtools** from PyPI:
 ```bash
 pip3 install --upgrade suvtools
 ```
