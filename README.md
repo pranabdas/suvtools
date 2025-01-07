@@ -15,7 +15,7 @@ Visit the project homepage <https://pranabdas.github.io/suvtools/>
 
 Install latest stable release:
 ```console
-pip3 install --upgrade suvtools
+pip install --upgrade suvtools
 ```
 
 Import suvtools into your project:
@@ -65,19 +65,6 @@ Calculates area under the curve for given `x` and `y` values. `x_start` and
 whole range is integrated.
 
 See the notebook and documentation for example usage.
-
-### Documentation development
-
-```console
-# install npm packages
-npm install
-
-# serve locally
-npm start
-
-# build
-npm run build
-```
 
 ### Python tests
 

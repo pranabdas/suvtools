@@ -1,8 +1,6 @@
 # Build command  : docker build -t suvtools .
-# Run docker     : docker run -ti -p 8888:8888 -v ${PWD}:/home suvtools bash
-# Launch jupyter : jupyter-notebook
-#                : jupyter-notebook --ip 0.0.0.0
-#                : jupyter-notebook --ip 0.0.0.0 --port 9999
+# Run docker     : docker run -ti -p 8888:8888 -v ${PWD}:/home --rm suvtools bash
+# Launch jupyter : jupyter lab
 
 # Start from Ubuntu 22.04 LTS
 FROM ubuntu:jammy
@@ -11,10 +9,10 @@ FROM ubuntu:jammy
 RUN apt update && apt upgrade -y
 
 # Install software packages
-RUN apt install -y python3 python3-pip fonts-open-sans
+RUN apt install -y python3 python3-pip && rm -rf /var/lib/apt/lists/*
 
 # Install pip packages
-RUN pip3 install jupyterlab suvtools
+RUN pip install jupyterlab suvtools
 
 # jupyterlab settings
 RUN mkdir /etc/jupyter && \
@@ -29,7 +27,7 @@ RUN mkdir -p /root/.config/matplotlib \
  && echo 'font.family       : sans-serif' >> /root/.config/matplotlib/matplotlibrc \
  && echo 'font.style        : normal' >> /root/.config/matplotlib/matplotlibrc \
  && echo 'font.weight       : regular' >> /root/.config/matplotlib/matplotlibrc \
- && echo 'font.sans-serif   : Open Sans, DejaVu Sans' >> /root/.config/matplotlib/matplotlibrc\
+ && echo 'font.sans-serif   : DejaVu Sans' >> /root/.config/matplotlib/matplotlibrc\
  && echo 'axes.linewidth    : 0.8' >> /root/.config/matplotlib/matplotlibrc \
  && echo 'axes.titlesize    : 16' >> /root/.config/matplotlib/matplotlibrc \
  && echo 'axes.labelsize    : 16' >> /root/.config/matplotlib/matplotlibrc \
