@@ -21,8 +21,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Python related
-venv/
+/venv
 /**/.ipynb_checkpoints
 /**/__pycache__
-/**/raw.githubusercontent.com
 .python-version
