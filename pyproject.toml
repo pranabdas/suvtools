@@ -29,10 +29,6 @@ notebook = [
     "jupyterlab>=4.3.4",
 ]
 
-test = [
-    "psutil>=6.1.1",
-]
-
 [project.urls]
 homepage = "https://pranabdas.github.io/suvtools/"
 repository = "https://github.com/pranabdas/suvtools"
