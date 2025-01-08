@@ -14,17 +14,6 @@ release of **suvtools** from PyPI:
 pip3 install --upgrade suvtools
 ```
 
-:::warning Still using older Python?
-
-If you are still using an older version of Python, please use a compatible
-version. If you are using Python `v3.9`, please install:
-
-```bash
-pip install --upgrade arpespythontools==1.0.*
-```
-
-::::
-
 ### Importing suvtools into your program:
 
 Import `suvtools` as `suv`, so that we can refer to it in short (e.g.,
