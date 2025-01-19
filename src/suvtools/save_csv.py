@@ -5,14 +5,13 @@ Program: Export SUV data in CSV format
 @author: Pranab Das (GitHub: @pranabdas)
 data = suv.save_csv(filename, csvname=None, scan=None)
 """
+import os
+import warnings
+import numpy as np
+import pandas as pd
 
 
 def save_csv(filename, csvname=None, scan=None):
-    import numpy as np
-    import pandas as pd
-    import os
-    import warnings
-
     fid = open(filename, "r")
     contents = fid.read()
     fid.close()

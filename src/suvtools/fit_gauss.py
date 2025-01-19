@@ -5,15 +5,15 @@ Program: Fit peaks with Gaussian distribution
 @author: Pranab Das (GitHub: @pranabdas)
 data = suv.fit_gauss(x, y, a=None, x0=None, sigma=None, xmin=None, xmax=None)
 """
+import numpy as np
+from scipy import optimize
+
+
+def gauss(x, a, x0, sigma):
+    return a * np.exp(-((x - x0) ** 2) / (2 * sigma**2))
 
 
 def fit_gauss(x, y, a=None, x0=None, sigma=None, xmin=None, xmax=None, num=1000):
-    import numpy as np
-    from scipy import optimize
-
-    def gauss(x, a, x0, sigma):
-        return a * np.exp(-((x - x0) ** 2) / (2 * sigma**2))
-
     if xmin:
         xmin = float(xmin)
         xmin_id = np.argmin(abs(x - xmin))

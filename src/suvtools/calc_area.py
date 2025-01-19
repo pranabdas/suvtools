@@ -5,11 +5,10 @@ Program: Calculate area under the curve
 @author: Pranab Das (GitHub: @pranabdas)
 area = suv.calc_area(y, x, x_end=None, x_end=None)
 """
+import numpy as np
 
 
 def calc_area(y, x, x_start=None, x_end=None):
-    import numpy as np
-
     if x_start:
         start_index = np.argmin(abs(x - x_start))
     else:

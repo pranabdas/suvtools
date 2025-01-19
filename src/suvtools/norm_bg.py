@@ -5,11 +5,10 @@ Program: Subtracts linear background and normalizes the data
 @author: Pranab Das (GitHub: @pranabdas)
 normalized_intensity = suv.norm_bg(energy, intensity, x1, x2, x_norm_loc=None)
 """
+import numpy as np
 
 
 def norm_bg(energy, intensity, x1, x2, x_norm_loc=None):
-    import numpy as np
-
     y1 = intensity[np.argmin(abs(energy - x1))]
     y2 = intensity[np.argmin(abs(energy - x2))]
 

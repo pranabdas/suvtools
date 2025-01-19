@@ -5,13 +5,12 @@ Program: Load SUV data
 @author: Pranab Das (GitHub: @pranabdas)
 data = suv.load("data.txt", 12)
 """
+import numpy as np
+import urllib.request
+import itertools
 
 
 def load(filename, scan=None):
-    import numpy as np
-    import urllib.request
-    import itertools
-
     if (filename[:7] == "http://") or (filename[:8] == "https://"):
         web = True
     else:

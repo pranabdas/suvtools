@@ -5,15 +5,15 @@ Program: Fit peaks with Lorentzian distribution
 @author: Pranab Das (GitHub: @pranabdas)
 data = suv.fit_lorentz(x, y, a=None, x0=None, gamma=None, xmin=None, xmax=None)
 """
+import numpy as np
+from scipy import optimize
+
+
+def lorentz(x, a, x0, gamma):
+    return a * gamma**2 / (np.pi * gamma * ((x - x0) ** 2 + gamma**2))
 
 
 def fit_lorentz(x, y, a=None, x0=None, gamma=None, xmin=None, xmax=None, num=1000):
-    import numpy as np
-    from scipy import optimize
-
-    def lorentz(x, a, x0, gamma):
-        return a * gamma**2 / (np.pi * gamma * ((x - x0) ** 2 + gamma**2))
-
     if xmin:
         xmin = float(xmin)
         xmin_id = np.argmin(abs(x - xmin))
