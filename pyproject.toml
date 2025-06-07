@@ -1,6 +1,6 @@
 [project]
 name = "suvtools"
-version = "1.1.2"
+version = "1.1.3"
 description = "Python library for analyzing and visualizing SSLS SUV Beamline data."
 authors = [{ name = "Pranab Das" }]
 readme = "README.md"
@@ -15,10 +15,10 @@ keywords = [
 ]
 
 dependencies = [
-    "matplotlib>=3.10.0",
-    "numpy>=2.2.2",
-    "scipy>=1.15.1",
-    "pandas>=2.2.3",
+    "matplotlib>=3.10.3",
+    "numpy>=2.2.6",
+    "scipy>=1.15.3",
+    "pandas>=2.3.0",
 ]
 
 [project.optional-dependencies]
@@ -27,7 +27,7 @@ lint = [
 ]
 
 notebook = [
-    "jupyterlab>=4.3.4",
+    "jupyterlab>=4.4.3",
 ]
 
 [project.urls]

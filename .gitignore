@@ -4,6 +4,8 @@
 # Production
 /build
 /dist
+/.venv
+/venv
 
 # Generated files
 .docusaurus
