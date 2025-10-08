@@ -9,11 +9,15 @@ const config = {
   url: site_url,
   baseUrl: "/suvtools/",
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.png",
   organizationName: "pranabdas",
   projectName: "suvtools",
   titleDelimiter: "•",
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
+  },
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
