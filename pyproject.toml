@@ -1,6 +1,6 @@
 [project]
 name = "suvtools"
-version = "1.2.0"
+version = "1.2.1"
 description = "Python library for analyzing and visualizing SSLS SUV Beamline data."
 authors = [{ name = "Pranab Das" }]
 readme = "README.md"
